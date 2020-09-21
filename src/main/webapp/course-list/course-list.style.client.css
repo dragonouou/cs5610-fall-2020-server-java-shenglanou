@@ -1,12 +1,44 @@
 .wbdv-sticky-header {
     position:fixed;
     top:0px;
-    background-color: lightblue;
     left:0px;
     right:0px;
-    padding:20px;
+    padding:10px;
 }
 
-body{
-
+body {
+    padding-top: 70px;
 }
+
+.wbdv-hamburger {
+    color: white;
+    vertical-align: middle;
+}
+
+.wbdv-new-course {
+    margin-bottom: 0px;
+}
+
+.wbdv-sticky-add-course {
+    color: red;
+    position: fixed;
+    bottom: 25px;
+    right: 50px;
+}
+
+.course {
+    width:50%
+}
+
+.wbdv-owner {
+    width:15%
+}
+
+.wbdv-modified-date {
+    width:20%
+}
+
+.wbdv-icon {
+    margin-right: 10px;
+}
+
