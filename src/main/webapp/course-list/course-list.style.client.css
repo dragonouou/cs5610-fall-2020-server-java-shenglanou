@@ -7,7 +7,7 @@
 }
 
 body {
-    padding-top: 70px;
+    padding-top: 85px;
 }
 
 .wbdv-hamburger {
@@ -26,8 +26,8 @@ body {
     right: 50px;
 }
 
-.course {
-    width:50%
+.wbdv-delete {
+    width:15%
 }
 
 .wbdv-owner {
