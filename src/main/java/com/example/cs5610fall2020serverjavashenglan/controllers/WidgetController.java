@@ -2,6 +2,7 @@ package com.example.cs5610fall2020serverjavashenglan.controllers;
 
 import com.example.cs5610fall2020serverjavashenglan.models.Widget;
 import com.example.cs5610fall2020serverjavashenglan.services.WidgetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,7 +10,9 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "*")
 public class WidgetController {
-    WidgetService service = new WidgetService();
+
+    @Autowired
+    WidgetService service;
 
     @GetMapping("/api/topics/{topicId}/widgets")
     public List<Widget> findAllWidgetsForTopic(
@@ -19,7 +22,7 @@ public class WidgetController {
 
     @GetMapping("/api/widgets/{wid}")
     public Widget findWidgetById(
-            @PathVariable("wid") String widgetId) {
+            @PathVariable("wid") Integer widgetId) {
         return service.findWidgetById(widgetId);
     }
 
@@ -32,19 +35,19 @@ public class WidgetController {
     public Widget createWidget(
             @PathVariable("topicId") String topicId,
             @RequestBody Widget widget) {
-        return service.createWidget(topicId,widget);
+        return service.createWidget(topicId, widget);
     }
 
     @PutMapping("/api/widgets/{wid}")
-    public Integer updateWidget(
-            @PathVariable("wid") String widgetId,
+    public Widget updateWidget(
+            @PathVariable("wid") Integer widgetId,
             @RequestBody Widget newWidget){
         return service.updateWidget(widgetId, newWidget);
     }
 
     @DeleteMapping("/api/widgets/{wid}")
-    public Integer deleteWidget(
-            @PathVariable("wid") String wid){
-        return service.deleteWidget(wid);
+    public void deleteWidget(
+            @PathVariable("wid") Integer wid){
+        service.deleteWidget(wid);
     }
 }
